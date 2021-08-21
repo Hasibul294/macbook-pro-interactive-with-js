@@ -1,43 +1,43 @@
 // set customize cost value 
-function setCustomizeCost(checkMemory){
+function setCustomizeCost(checkButton){
     // 8gb memory button 
-    if(checkMemory == document.getElementById('8gb-memory-button').innerText){
+    if(checkButton == document.getElementById('8gb-memory-button').innerText){
         const extraMemory = document.getElementById('memory-cost');
         extraMemory.innerText = 0;
         getTotal();
     }
     // 16gb memory button 
-    else if(checkMemory == document.getElementById('16gb-memory-button').innerText){
+    else if(checkButton == document.getElementById('16gb-memory-button').innerText){
         const extraMemory = document.getElementById('memory-cost');
         extraMemory.innerText = 180;
         getTotal();
     }
     // 256gb ssd button
-    else if(checkMemory == document.getElementById('256gb-ssd-button').innerText){
+    else if(checkButton == document.getElementById('256gb-ssd-button').innerText){
         const extraStorage = document.getElementById('storage-cost');
         extraStorage.innerText = 0;
         getTotal();
     }
     // 512gb ssd button
-    else if(checkMemory == document.getElementById('512gb-ssd-button').innerText){
+    else if(checkButton == document.getElementById('512gb-ssd-button').innerText){
         const extraStorage = document.getElementById('storage-cost');
         extraStorage.innerText = 100;
         getTotal();
     }
     // 1tgb ssd button
-    else if(checkMemory == document.getElementById('1tb-ssd-button').innerText){
+    else if(checkButton == document.getElementById('1tb-ssd-button').innerText){
         const extraStorage = document.getElementById('storage-cost');
         extraStorage.innerText = 180;
         getTotal();
     }
     // free delivery button
-    else if(checkMemory == document.getElementById('free-delivery').innerText){
+    else if(checkButton == document.getElementById('free-delivery').innerText){
         const extraStorage = document.getElementById('delivery-cost');
         extraStorage.innerText = 0;
         getTotal();
     }
     // cost delivery button
-    else if(checkMemory == document.getElementById('cost-delivery').innerText){
+    else if(checkButton == document.getElementById('cost-delivery').innerText){
         const extraStorage = document.getElementById('delivery-cost');
         extraStorage.innerText = 20;
         getTotal();
@@ -79,8 +79,8 @@ function getTotalWithPromoCode(promoCode){
 }
 // event handler for all button 
 document.getElementById('all-button').addEventListener('click', function(event){
-    const checkMemory = event.target.innerText;
-    setCustomizeCost(checkMemory);
+    const checkButton = event.target.innerText;
+    setCustomizeCost(checkButton);
 });
 // event handler for promo code button 
 document.getElementById('promo-code-button').addEventListener('click', function(){
