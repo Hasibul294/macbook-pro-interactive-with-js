@@ -37,46 +37,46 @@ function getTotalWithPromoCode(promoCode){
 document.getElementById('8gb-memory-button').addEventListener('click', function(){
     const extraMemory = document.getElementById('memory-cost');
     extraMemory.innerText = 0;
-    const totalPrice = getTotal();
+    getTotal();
 });
 // event handler for 16gb memory button 
 document.getElementById('16gb-memory-button').addEventListener('click', function(){
     const extraMemory = document.getElementById('memory-cost');
     extraMemory.innerText = 180;
-    const totalPrice = getTotal();
+    getTotal();
 });
 // event handler for 256gb ssd button 
 document.getElementById('256gb-ssd-button').addEventListener('click', function(){
     const extraStorage = document.getElementById('storage-cost');
     extraStorage.innerText = 0;
-    const totalPrice = getTotal();
+    getTotal();
 
 });
 // event handler for 512gb ssd button 
 document.getElementById('512gb-ssd-button').addEventListener('click', function(){
     const extraStorage = document.getElementById('storage-cost');
     extraStorage.innerText = 100;
-    const totalPrice = getTotal();
+    getTotal();
 
 });
 // event handler for 1tb ssd button 
 document.getElementById('1tb-ssd-button').addEventListener('click', function(){
     const extraStorage = document.getElementById('storage-cost');
     extraStorage.innerText = 180;
-    const totalPrice = getTotal();
+    getTotal();
 
 });
 // event handler for free delivery button 
 document.getElementById('free-delivery').addEventListener('click', function(){
     const deliveryCharge = document.getElementById('delivery-cost');
     deliveryCharge.innerText = 0;
-    const totalPrice = getTotal();
+    getTotal();
 });
 // event handler for cost delivery button 
 document.getElementById('cost-delivery').addEventListener('click', function(){
     const deliveryCharge = document.getElementById('delivery-cost');
     deliveryCharge.innerText = 20;
-    const totalPrice = getTotal();
+    getTotal();
 });
 // event handler for promo code button 
 document.getElementById('promo-code-button').addEventListener('click', function(){
