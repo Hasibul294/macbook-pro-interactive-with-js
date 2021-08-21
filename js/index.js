@@ -1,3 +1,48 @@
+// set customize cost value 
+function setCustomizeCost(checkMemory){
+    // 8gb memory button 
+    if(checkMemory == document.getElementById('8gb-memory-button').innerText){
+        const extraMemory = document.getElementById('memory-cost');
+        extraMemory.innerText = 0;
+        getTotal();
+    }
+    // 16gb memory button 
+    else if(checkMemory == document.getElementById('16gb-memory-button').innerText){
+        const extraMemory = document.getElementById('memory-cost');
+        extraMemory.innerText = 180;
+        getTotal();
+    }
+    // 256gb ssd button
+    else if(checkMemory == document.getElementById('256gb-ssd-button').innerText){
+        const extraStorage = document.getElementById('storage-cost');
+        extraStorage.innerText = 0;
+        getTotal();
+    }
+    // 512gb ssd button
+    else if(checkMemory == document.getElementById('512gb-ssd-button').innerText){
+        const extraStorage = document.getElementById('storage-cost');
+        extraStorage.innerText = 100;
+        getTotal();
+    }
+    // 1tgb ssd button
+    else if(checkMemory == document.getElementById('1tb-ssd-button').innerText){
+        const extraStorage = document.getElementById('storage-cost');
+        extraStorage.innerText = 180;
+        getTotal();
+    }
+    // free delivery button
+    else if(checkMemory == document.getElementById('free-delivery').innerText){
+        const extraStorage = document.getElementById('delivery-cost');
+        extraStorage.innerText = 0;
+        getTotal();
+    }
+    // cost delivery button
+    else if(checkMemory == document.getElementById('cost-delivery').innerText){
+        const extraStorage = document.getElementById('delivery-cost');
+        extraStorage.innerText = 20;
+        getTotal();
+    }
+}
 // Total price function 
 function getTotal(){
     let totalCost = 1299;
@@ -31,56 +76,14 @@ function getTotalWithPromoCode(promoCode){
         console.log('error massage');
     }
     promoCodeInputField.value = '';
-
 }
-// event handler for 8gb memory button 
-document.getElementById('8gb-memory-button').addEventListener('click', function(){
-    const extraMemory = document.getElementById('memory-cost');
-    extraMemory.innerText = 0;
-    getTotal();
-});
-// event handler for 16gb memory button 
-document.getElementById('16gb-memory-button').addEventListener('click', function(){
-    const extraMemory = document.getElementById('memory-cost');
-    extraMemory.innerText = 180;
-    getTotal();
-});
-// event handler for 256gb ssd button 
-document.getElementById('256gb-ssd-button').addEventListener('click', function(){
-    const extraStorage = document.getElementById('storage-cost');
-    extraStorage.innerText = 0;
-    getTotal();
-
-});
-// event handler for 512gb ssd button 
-document.getElementById('512gb-ssd-button').addEventListener('click', function(){
-    const extraStorage = document.getElementById('storage-cost');
-    extraStorage.innerText = 100;
-    getTotal();
-
-});
-// event handler for 1tb ssd button 
-document.getElementById('1tb-ssd-button').addEventListener('click', function(){
-    const extraStorage = document.getElementById('storage-cost');
-    extraStorage.innerText = 180;
-    getTotal();
-
-});
-// event handler for free delivery button 
-document.getElementById('free-delivery').addEventListener('click', function(){
-    const deliveryCharge = document.getElementById('delivery-cost');
-    deliveryCharge.innerText = 0;
-    getTotal();
-});
-// event handler for cost delivery button 
-document.getElementById('cost-delivery').addEventListener('click', function(){
-    const deliveryCharge = document.getElementById('delivery-cost');
-    deliveryCharge.innerText = 20;
-    getTotal();
+// event handler for all button 
+document.getElementById('all-button').addEventListener('click', function(event){
+    const checkMemory = event.target.innerText;
+    setCustomizeCost(checkMemory);
 });
 // event handler for promo code button 
 document.getElementById('promo-code-button').addEventListener('click', function(){
     const promoCode = 'stevekaku';
     getTotalWithPromoCode(promoCode);
 });
-
