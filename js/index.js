@@ -1,12 +1,35 @@
 function getTotal(){
-    let totalCost = 1299;  
+    let totalCost = 1299;
+
     const memoryCost = parseFloat(document.getElementById('memory-cost').innerText);
     const storageCost = parseFloat(document.getElementById('storage-cost').innerText);
     const deliveryCost = parseFloat(document.getElementById('delivery-cost').innerText);
-    const totalCostText = document.getElementById('total-cost');
+
+    const totalCostText = document.getElementById('total-price');
     const totalCostAmount =memoryCost + storageCost + deliveryCost + totalCost;
     totalCostText.innerText = totalCostAmount;
+
+    const total = document.getElementById('total');
+    total.innerText = totalCostAmount;
+
     return totalCostAmount;
+}
+function getTotalWithPromoCode(promoCode){
+    const promoCodeInputField = document.getElementById('promo-code-input');
+    if(promoCodeInputField.value == promoCode){
+        const totalPrice = getTotal();
+        const total = document.getElementById('total');
+        const promoCodeAmount = totalPrice * .2;
+        const totalCostAmount = totalPrice - promoCodeAmount;
+        total.innerText = totalCostAmount;
+        document.getElementById('error-massage').style.display = 'none';
+    }
+    else{
+        document.getElementById('error-massage').style.display = 'block';
+        console.log('error massage');
+    }
+    promoCodeInputField.value = '';
+
 }
 document.getElementById('8gb-memory-button').addEventListener('click', function(){
     const extraMemory = document.getElementById('memory-cost');
@@ -51,5 +74,10 @@ document.getElementById('cost-delivery').addEventListener('click', function(){
     const deliveryCharge = document.getElementById('delivery-cost');
     deliveryCharge.innerText = 20;
     const totalPrice = getTotal();
+});
+
+document.getElementById('promo-code-button').addEventListener('click', function(){
+    const promoCode = 'stevekaku';
+    getTotalWithPromoCode(promoCode);
 });
 

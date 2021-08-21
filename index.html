@@ -51,16 +51,17 @@
                     <h6 class="fw-bolder d-flex justify-content-between">Extra Memory Cost:<span>$<span id="memory-cost">0</span></span></h6><hr> 
                     <h6 class="fw-bolder d-flex justify-content-between">Extra Storage Cost:<span>$<span id="storage-cost">0</span></span></h6><hr>
                     <h6 class="fw-bolder d-flex justify-content-between">Delivery charge:<span>$<span id="delivery-cost">0</span></span></h6><hr class="border border-dark border-4">
-                    <h6 class="fw-bolder d-flex justify-content-between">Total Price:<span>$<span id="total-cost">1299</span></span></h6><hr>
+                    <h6 class="fw-bolder d-flex justify-content-between">Total Price:<span>$<span id="total-price">1299</span></span></h6><hr>
                     <p>Add Promo Code</p>
-                    <input type="text">
-                    <button class="bg-danger border rounded text-white px-2 py-1">Apply</button>
+                    <input id="promo-code-input" type="text">
+                    <button id="promo-code-button" class="bg-danger border rounded text-white px-2 py-1">Apply</button>
+                    <p id="error-massage" class="text-danger" style="display: none;">Promo Code Invalid!</p>
                 </div>
             </section>
         </div>
         <hr>
         <section class="text-center mb-4">
-            <h1>Total: $<span>1299</span></h1>
+            <h1>Total: $<span id="total">1299</span></h1>
         </section>
     </main>
 
